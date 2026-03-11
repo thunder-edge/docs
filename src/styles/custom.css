@@ -36,3 +36,7 @@
 starlight-theme-select {
   display: none;
 }
+
+a.site-title > span {
+  display: none;
+}

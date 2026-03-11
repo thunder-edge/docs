@@ -7,7 +7,7 @@ This guide walks through building Thunder from a local checkout of the repositor
 ## Clone the repository
 
 ```bash
-git clone https://github.com/thunder-edge/docs.git
+git clone https://github.com/thunder-edge/runtime.git
 cd deno-edge-runtime
 ```
 

@@ -15,13 +15,13 @@ This guide walks you through installing Thunder, starting the server, writing a 
 **Option A -- Install script (Linux / macOS):**
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/thunder-edge/docs/main/scripts/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/thunder-edge/runtime/main/scripts/install.sh | bash
 ```
 
 **Option B -- Build from source:**
 
 ```bash
-git clone https://github.com/thunder-edge/docs.git
+git clone https://github.com/thunder-edge/runtime.git
 cd deno-edge-runtime
 cargo build --release
 ```
