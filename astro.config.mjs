@@ -8,7 +8,7 @@ const base =
     ? `/${repository}`
     : "/";
 const site = process.env.GITHUB_REPOSITORY_OWNER
-  ? `https://${process.env.GITHUB_REPOSITORY_OWNER}.github.io/docs`
+  ? `https://${process.env.GITHUB_REPOSITORY_OWNER}.github.io/docs/`
   : undefined;
 
 const config = {
@@ -25,7 +25,7 @@ const config = {
         {
           icon: "github",
           label: "GitHub",
-          href: "https://github.com/thunder-edge/docs",
+          href: "https://github.com/thunder-edge/runtime",
         },
       ],
       customCss: ["./src/styles/custom.css"],
