@@ -8,7 +8,7 @@ const base =
     ? `/${repository}`
     : "/";
 const site = process.env.GITHUB_REPOSITORY_OWNER
-  ? `https://${process.env.GITHUB_REPOSITORY_OWNER}.github.io`
+  ? `https://${process.env.GITHUB_REPOSITORY_OWNER}.github.io/docs`
   : undefined;
 
 const config = {
@@ -31,7 +31,7 @@ const config = {
       customCss: ["./src/styles/custom.css"],
       editLink: {
         baseUrl:
-          "https://github.com/thunder-edge/docs/edit/main/docs/site/",
+          "https://github.com/thunder-edge/docs/edit/main/",
       },
       tableOfContents: { minHeadingLevel: 2, maxHeadingLevel: 4 },
       sidebar: [
