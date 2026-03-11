@@ -62,6 +62,16 @@ const config = {
           ],
         },
         {
+          label: "Examples",
+          items: [
+            { label: "Overview", slug: "examples/overview" },
+            { label: "Hello World", slug: "examples/hello-world" },
+            { label: "JSON API", slug: "examples/json-api" },
+            { label: "RESTful CRUD", slug: "examples/restful-crud" },
+            { label: "More Examples", slug: "examples/more" },
+          ],
+        },
+        {
           label: "Architecture",
           items: [
             { label: "System Overview", slug: "architecture/system-overview" },
@@ -133,16 +143,6 @@ const config = {
             { label: "Contributing", slug: "development/contributing" },
             { label: "Project Structure", slug: "development/project-structure" },
             { label: "Running Tests", slug: "development/running-tests" },
-          ],
-        },
-        {
-          label: "Examples",
-          items: [
-            { label: "Overview", slug: "examples/overview" },
-            { label: "Hello World", slug: "examples/hello-world" },
-            { label: "JSON API", slug: "examples/json-api" },
-            { label: "RESTful CRUD", slug: "examples/restful-crud" },
-            { label: "More Examples", slug: "examples/more" },
           ],
         },
         {
