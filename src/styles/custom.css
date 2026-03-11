@@ -1,0 +1,38 @@
+/* Force light theme as default */
+:root {
+  color-scheme: light;
+}
+
+:root,
+:root[data-theme="light"] {
+  --sl-color-accent-low: #fff7ed;
+  --sl-color-accent: #d97706;
+  --sl-color-accent-high: #92400e;
+  --sl-color-white: #17181c;
+  --sl-color-gray-1: #24272f;
+  --sl-color-gray-2: #545861;
+  --sl-color-gray-3: #888b96;
+  --sl-color-gray-4: #c0c2c7;
+  --sl-color-gray-5: #eceef2;
+  --sl-color-gray-6: #f5f6f8;
+  --sl-color-black: #ffffff;
+}
+
+:root[data-theme="dark"] {
+  --sl-color-accent-low: #1a1a2e;
+  --sl-color-accent: #f59e0b;
+  --sl-color-accent-high: #fbbf24;
+  --sl-color-white: #ffffff;
+  --sl-color-gray-1: #eceef2;
+  --sl-color-gray-2: #c0c2c7;
+  --sl-color-gray-3: #888b96;
+  --sl-color-gray-4: #545861;
+  --sl-color-gray-5: #353841;
+  --sl-color-gray-6: #24272f;
+  --sl-color-black: #17181c;
+}
+
+/* Hide theme toggle — force light only */
+starlight-theme-select {
+  display: none;
+}

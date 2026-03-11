@@ -1,0 +1,121 @@
+---
+title: Overview
+description: Thunder is a Rust-powered edge runtime built on the Deno stack
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+Thunder is a high-performance edge runtime that executes JavaScript and TypeScript functions inside isolated V8 sandboxes. Built in Rust on top of the Deno stack, it provides a secure, fast, and observable platform for deploying serverless functions at the edge.
+
+Each function runs in its own V8 isolate with strict resource limits, and bundles are deployed dynamically through an HTTP admin API -- no restarts, no downtime.
+
+## How it works
+
+You write a function that uses `export default` to expose a request handler, bundle it into an ESZIP package with the Thunder CLI, and deploy it to a running Thunder server via a single HTTP request. Thunder takes care of isolate creation, routing, lifecycle management, and observability.
+
+Thunder supports three handler patterns:
+
+1. **`export default function`** -- the preferred pattern for single handlers
+2. **`export default` object with method handlers** -- preferred for RESTful multi-method endpoints
+3. **`Deno.serve()`** -- legacy pattern, still supported for backwards compatibility
+
+```typescript
+// hello.ts — preferred pattern
+export default function handler(req: Request) {
+  return new Response("Hello from Thunder!", {
+    headers: { "content-type": "text/plain" },
+  });
+}
+```
+
+Thunder also ships the `thunder:http` module with response helpers (`JSONResponse`, `TextResponse`, `HTMLResponse`, `ErrorResponse`, and more) that provide a builder API with `.status()`, `.header()`, `.cookie()`, and `.toResponse()`:
+
+```typescript
+// api.ts — multi-method handler with thunder:http helpers
+import { JSONResponse, ErrorResponse, HTTP } from "thunder:http";
+
+export default {
+  async GET(req: Request) {
+    return JSONResponse({ message: "hello" }).toResponse();
+  },
+  async POST(req: Request) {
+    const body = await req.json();
+    return JSONResponse(body).status(HTTP.Created).toResponse();
+  },
+};
+```
+
+```bash
+# Bundle
+thunder bundle --entrypoint ./hello.ts --output ./hello.eszip
+
+# Deploy
+curl -X POST http://localhost:9000/_internal/functions \
+  -H "x-function-name: hello" \
+  --data-binary @hello.eszip
+
+# Invoke
+curl http://localhost:8080/hello
+# => Hello from Thunder!
+```
+
+## Key features
+
+<CardGrid>
+  <Card title="V8 isolate sandbox">
+    Every function runs in its own V8 isolate with memory limits, CPU time budgets, and wall-clock timeouts. Functions cannot interfere with each other.
+  </Card>
+  <Card title="ESZIP bundling">
+    The Thunder CLI bundles your TypeScript or JavaScript entry point and all dependencies into a single ESZIP file, ready for deployment.
+  </Card>
+  <Card title="Dynamic deployment via HTTP API">
+    Deploy, update, and remove functions at runtime through the admin API. No server restarts required.
+  </Card>
+  <Card title="Hot-reload dev mode">
+    `thunder watch` monitors your source files and automatically rebuilds and redeploys on every change, giving you a tight feedback loop during development.
+  </Card>
+  <Card title="Built-in testing library">
+    Import from `thunder:testing` to write unit and integration tests for your edge functions, and run them with `thunder test`.
+  </Card>
+  <Card title="OpenTelemetry observability">
+    First-class support for traces, metrics, and logs via OTLP. Export telemetry to any OpenTelemetry-compatible collector.
+  </Card>
+  <Card title="Node.js compatibility">
+    Supports 42 built-in Node.js modules through the Deno compatibility layer, so you can use npm packages and familiar Node APIs.
+  </Card>
+  <Card title="SSRF protection">
+    Outbound `fetch()` calls are blocked from reaching private IP ranges by default, preventing server-side request forgery attacks. Allowlists are available for trusted internal networks.
+  </Card>
+  <Card title="TLS support">
+    Both the admin and ingress listeners support TLS termination with configurable certificate and key paths.
+  </Card>
+  <Card title="Ed25519 bundle signing">
+    Optionally require cryptographic signatures on deployed bundles to ensure only trusted code reaches production.
+  </Card>
+</CardGrid>
+
+## Architecture at a glance
+
+Thunder runs two separate HTTP listeners:
+
+- **Admin listener** (default port `9000`) -- Authenticated API for deploying functions, checking health, and reading metrics. All endpoints live under `/_internal/*`.
+- **Ingress listener** (default port `8080`) -- Public-facing listener that routes incoming requests to deployed functions based on the URL path.
+
+Both listeners share a function registry that holds the deployed ESZIP bundles and manages the isolate pool.
+
+## Next steps
+
+<CardGrid>
+  <Card title="Quick Start" icon="rocket">
+    Go from zero to a running function in five minutes.
+    [Get started](/getting-started/quick-start/)
+  </Card>
+  <Card title="Installation" icon="laptop">
+    Install the Thunder binary or build from source.
+    [Install Thunder](/installation/install/)
+  </Card>
+  <Card title="Key Concepts" icon="open-book">
+    Understand isolates, bundles, the function registry, and more.
+    [Read the concepts](/getting-started/concepts/)
+  </Card>
+</CardGrid>

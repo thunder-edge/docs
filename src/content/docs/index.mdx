@@ -1,0 +1,38 @@
+---
+title: Thunder Edge Runtime
+description: Run JavaScript and TypeScript functions at the edge in isolated V8 sandboxes.
+template: splash
+hero:
+  tagline: A Rust-powered edge runtime built on the Deno stack. Deploy isolated JavaScript and TypeScript functions with per-request sandboxing, sub-millisecond cold starts, and built-in observability.
+  actions:
+    - text: Get Started
+      link: /getting-started/overview/
+      icon: right-arrow
+      variant: primary
+    - text: View on GitHub
+      link: https://github.com/thunder-edge/docs
+      icon: external
+---
+
+import { Card, CardGrid } from "@astrojs/starlight/components";
+
+<CardGrid stagger>
+  <Card title="V8 Isolate Sandbox" icon="shield">
+    Each function runs in its own V8 isolate with strict memory, CPU, and network limits. Full multi-tenant isolation out of the box.
+  </Card>
+  <Card title="Dual-Listener Architecture" icon="network">
+    Separate admin (port 9000) and ingress (port 8080) listeners. Deploy functions via the admin API, invoke them through ingress routing.
+  </Card>
+  <Card title="Web Standards First" icon="globe">
+    Write functions using standard `fetch`, `Request`, `Response`, `crypto`, `WebSocket`, and more. Full Web API compatibility.
+  </Card>
+  <Card title="Node.js Compatibility" icon="puzzle">
+    Partial support for `node:fs`, `node:crypto`, `node:buffer`, `node:stream`, `node:path`, and 30+ other Node modules.
+  </Card>
+  <Card title="Built-in Observability" icon="magnifier">
+    OpenTelemetry traces, metrics, and logs. Per-function metrics, saturation scoring, and a comprehensive metrics endpoint.
+  </Card>
+  <Card title="Fast Cold Starts" icon="rocket">
+    V8 snapshots and ESZIP bundling for fast startup. Isolate pooling and context-first scheduling for warm request routing.
+  </Card>
+</CardGrid>
