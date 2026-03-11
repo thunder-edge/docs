@@ -1,17 +1,11 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 
-const repository = process.env.GITHUB_REPOSITORY?.split("/")[1] ?? "";
-const isUserOrOrgPages = repository.endsWith(".github.io");
-const base =
-  process.env.GITHUB_ACTIONS && repository && !isUserOrOrgPages
-    ? `/${repository}`
-    : "/";
-const site = process.env.GITHUB_REPOSITORY_OWNER
-  ? `https://${process.env.GITHUB_REPOSITORY_OWNER}.github.io/docs/`
-  : undefined;
+const site = "https://thunder-edge.github.io";
+const base = "/docs";
 
 const config = {
+  site,
   base,
   integrations: [
     starlight({
@@ -153,9 +147,5 @@ const config = {
     }),
   ],
 };
-
-if (site) {
-  config.site = site;
-}
 
 export default defineConfig(config);
