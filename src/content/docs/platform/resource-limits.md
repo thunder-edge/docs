@@ -16,7 +16,7 @@ These limits apply to each individual function isolate.
 | Heap memory | `--max-heap-mib` | `EDGE_RUNTIME_MAX_HEAP_MIB` | 128 MiB | Maximum V8 heap size. The isolate is terminated if it exceeds this. |
 | CPU time | `--cpu-time-limit-ms` | `EDGE_RUNTIME_CPU_TIME_LIMIT_MS` | 50000 ms | Cumulative CPU time (excludes I/O wait). Isolate is terminated when exceeded. |
 | Wall-clock timeout | `--wall-clock-timeout-ms` | `EDGE_RUNTIME_WALL_CLOCK_TIMEOUT_MS` | 60000 ms | Total elapsed time from request start. Covers CPU, I/O, and idle time. |
-| VFS total quota | `--vfs-total-quota-bytes` | `EDGE_RUNTIME_VFS_TOTAL_QUOTA_BYTES` | 10 MiB | Total writable bytes in `/tmp`. See [Virtual File System](/platform/vfs/). |
+| VFS total quota | `--vfs-total-quota-bytes` | `EDGE_RUNTIME_VFS_TOTAL_QUOTA_BYTES` | 10 MiB | Total writable bytes in `/tmp`. See [Virtual File System](/docs/platform/vfs/). |
 | VFS max file size | `--vfs-max-file-bytes` | `EDGE_RUNTIME_VFS_MAX_FILE_BYTES` | 5 MiB | Maximum size of a single file in `/tmp`. |
 
 ### Behaviour on limit violation
@@ -82,7 +82,7 @@ The manager:
 - Tracks active outbound connections across all isolates.
 - Reserves FDs for the ingress listener and internal use.
 - Queues outbound connection attempts when the FD budget is saturated.
-- Reports FD utilisation as part of the [scaling signal](/deployment/scaling/).
+- Reports FD utilisation as part of the [scaling signal](/docs/deployment/scaling/).
 
 The FD budget is derived from the system `ulimit -n` minus a safety margin for internal operations.
 

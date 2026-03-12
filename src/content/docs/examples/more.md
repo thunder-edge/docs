@@ -173,4 +173,4 @@ The following examples are also available in the repository:
 | **urlpattern-routing** | `URLPattern` API for declarative route matching. |
 | **web-crypto-api** | Hashing (SHA-256), HMAC signing, AES encryption/decryption. |
 
-Browse the full source in `examples/` or see the [Examples overview](/examples/overview/) for the complete catalog.
+Browse the full source in `examples/` or see the [Examples overview](/docs/examples/overview/) for the complete catalog.

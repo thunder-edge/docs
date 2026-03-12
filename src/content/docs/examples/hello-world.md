@@ -70,6 +70,6 @@ curl http://localhost:9000/hello
 
 ## What to try next
 
-- Return JSON instead of plain text -- see [JSON API](/examples/json-api/).
-- Use the `export default` object pattern with HTTP method handlers -- see [RESTful CRUD](/examples/restful-crud/).
-- Explore all 30 examples in the [Examples overview](/examples/overview/).
+- Return JSON instead of plain text -- see [JSON API](/docs/examples/json-api/).
+- Use the `export default` object pattern with HTTP method handlers -- see [RESTful CRUD](/docs/examples/restful-crud/).
+- Explore all 30 examples in the [Examples overview](/docs/examples/overview/).

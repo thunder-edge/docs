@@ -107,7 +107,7 @@ Key files and directories:
 
 ## Examples
 
-The `examples/` directory contains 30 self-contained edge functions, each in its own subdirectory with a single `.ts` entry file. See [Examples](/examples/overview/) for the full list.
+The `examples/` directory contains 30 self-contained edge functions, each in its own subdirectory with a single `.ts` entry file. See [Examples](/docs/examples/overview/) for the full list.
 
 ## Tests
 

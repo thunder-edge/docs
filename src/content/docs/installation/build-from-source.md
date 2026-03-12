@@ -2,7 +2,7 @@
 title: "Build from Source"
 ---
 
-This guide walks through building Thunder from a local checkout of the repository. Make sure you have the [prerequisites](/installation/prerequisites/) installed before continuing.
+This guide walks through building Thunder from a local checkout of the repository. Make sure you have the [prerequisites](/docs/installation/prerequisites/) installed before continuing.
 
 ## Clone the repository
 

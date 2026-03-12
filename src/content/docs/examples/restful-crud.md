@@ -171,5 +171,5 @@ curl http://localhost:9000/999
 - **`export default` dispatch** -- Thunder inspects the default export. If it is an object with method-named keys (`GET`, `POST`, `PUT`, `PATCH`, `DELETE`, `HEAD`, `OPTIONS`), Thunder routes the request to the matching handler. If the method is not defined, Thunder returns `405 Method Not Allowed`.
 - **Response builder chain** -- `JSONResponse(data).status(HTTP.Created).header("location", "/items/3").toResponse()` produces a fully configured `Response` object in a readable, chainable style.
 - **In-memory state** -- The `items` Map persists across requests within the same isolate. It resets when the isolate is recycled. For production use, connect to an external data store.
-- **`export default function`** -- You can also export a single async function instead of a method object. This is preferred when you need custom routing logic. See the [JSON API](/examples/json-api/) example for that pattern.
+- **`export default function`** -- You can also export a single async function instead of a method object. This is preferred when you need custom routing logic. See the [JSON API](/docs/examples/json-api/) example for that pattern.
 - **Legacy `Deno.serve()`** -- The `Deno.serve()` API is still supported for backwards compatibility, but the `export default` patterns are preferred for new functions.

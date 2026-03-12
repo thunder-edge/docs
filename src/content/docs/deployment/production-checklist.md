@@ -21,7 +21,7 @@ Without `--api-key`, the admin API is open to any client that can reach the admi
 
 ### 2. Enable TLS on both listeners
 
-Serve HTTPS on the ingress and admin listeners. See [TLS Configuration](/deployment/tls/) for flag details.
+Serve HTTPS on the ingress and admin listeners. See [TLS Configuration](/docs/deployment/tls/) for flag details.
 
 ```bash
 thunder \
@@ -64,7 +64,7 @@ thunder \
   --max-response-body-size 10485760
 ```
 
-See [Resource Limits](/platform/resource-limits/) for defaults and behaviour.
+See [Resource Limits](/docs/platform/resource-limits/) for defaults and behaviour.
 
 ### 6. Configure connection limits
 
@@ -91,7 +91,7 @@ thunder \
   --wall-clock-timeout-ms 60000
 ```
 
-Conservative defaults are provided, but production workloads may require adjustment. See [Resource Limits](/platform/resource-limits/) for guidance.
+Conservative defaults are provided, but production workloads may require adjustment. See [Resource Limits](/docs/platform/resource-limits/) for guidance.
 
 ---
 
@@ -141,7 +141,7 @@ thunder \
   --otel-protocol grpc
 ```
 
-See [Environment Variables](/deployment/environment-variables/) for the full list of OTEL settings.
+See [Environment Variables](/docs/deployment/environment-variables/) for the full list of OTEL settings.
 
 ### 10. Set up health checks
 
@@ -182,7 +182,7 @@ thunder \
   --pool-min-free-memory-mib 512
 ```
 
-See [Scaling](/deployment/scaling/) for autoscaling signals and pool configuration.
+See [Scaling](/docs/deployment/scaling/) for autoscaling signals and pool configuration.
 
 ---
 

@@ -68,4 +68,4 @@ Or as a snapshot bundle:
 thunder bundle --entrypoint ./examples/hello/hello.ts --output ./hello.snapshot.bundle --format snapshot
 ```
 
-See the individual example pages for more details on [Hello World](/examples/hello-world/), [JSON API](/examples/json-api/), [RESTful CRUD](/examples/restful-crud/), and [more](/examples/more/).
+See the individual example pages for more details on [Hello World](/docs/examples/hello-world/), [JSON API](/docs/examples/json-api/), [RESTful CRUD](/docs/examples/restful-crud/), and [more](/docs/examples/more/).

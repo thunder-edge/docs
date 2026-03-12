@@ -26,7 +26,7 @@ git checkout -b feat/my-change
 cargo build
 ```
 
-5. **Run the test suite** before pushing (see [Running Tests](/development/running-tests/)):
+5. **Run the test suite** before pushing (see [Running Tests](/docs/development/running-tests/)):
 
 ```bash
 make test
@@ -49,7 +49,7 @@ For TypeScript and JavaScript code (examples, tests, bootstrap scripts), follow 
 
 There is **no `package.json`** in this repository. Thunder is a pure Rust workspace with four crates (`runtime-core`, `functions`, `server`, `cli`). JavaScript and TypeScript files -- bootstrap scripts, Node.js polyfills, runtime shims, and the built-in test runner -- are embedded directly into the Rust binary at compile time.
 
-See [Project Structure](/development/project-structure/) for the full directory layout.
+See [Project Structure](/docs/development/project-structure/) for the full directory layout.
 
 ## Key technical consideration: V8 JsRuntime is !Send
 

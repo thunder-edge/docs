@@ -2,7 +2,7 @@
 title: "Install Thunder"
 ---
 
-The fastest way to get Thunder running is to download a prebuilt binary from GitHub Releases. If you prefer to compile it yourself, see [Build from Source](/installation/build-from-source/).
+The fastest way to get Thunder running is to download a prebuilt binary from GitHub Releases. If you prefer to compile it yourself, see [Build from Source](/docs/installation/build-from-source/).
 
 ## Install from GitHub Releases
 
@@ -48,7 +48,7 @@ curl -fsSL https://raw.githubusercontent.com/thunder-edge/runtime/main/install.s
 
 ## Build from source
 
-If you need to build from a local checkout or want to hack on Thunder itself, follow the [Build from Source](/installation/build-from-source/) guide.
+If you need to build from a local checkout or want to hack on Thunder itself, follow the [Build from Source](/docs/installation/build-from-source/) guide.
 
 ## Verify the installation
 

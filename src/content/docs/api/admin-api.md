@@ -41,7 +41,7 @@ curl http://localhost:9000/_internal/health
 
 ### `GET /_internal/metrics`
 
-Returns a JSON object with runtime and per-function metrics. See the [Metrics Endpoint](/api/metrics/) reference for the full schema.
+Returns a JSON object with runtime and per-function metrics. See the [Metrics Endpoint](/docs/api/metrics/) reference for the full schema.
 
 ```bash
 curl http://localhost:9000/_internal/metrics

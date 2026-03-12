@@ -138,6 +138,6 @@ This mode is intended for development only. For production, use the `start` comm
 
 ## Next steps
 
-- **[RESTful APIs](/guides/restful-apis/)** -- Build a CRUD API using `export default` method handlers and `thunder:http` response helpers.
-- **[Testing Functions](/guides/testing/)** -- Write and run tests using the built-in `thunder:testing` library.
-- **[Debugging](/guides/debugging/)** -- Attach VS Code, Chrome DevTools, or Neovim to debug functions with breakpoints.
+- **[RESTful APIs](/docs/guides/restful-apis/)** -- Build a CRUD API using `export default` method handlers and `thunder:http` response helpers.
+- **[Testing Functions](/docs/guides/testing/)** -- Write and run tests using the built-in `thunder:testing` library.
+- **[Debugging](/docs/guides/debugging/)** -- Attach VS Code, Chrome DevTools, or Neovim to debug functions with breakpoints.

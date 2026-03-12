@@ -47,7 +47,7 @@ These modules provide working implementations for the most common operations. Ch
 | `node:diagnostics_channel` | Partial | `channel()`, `subscribe()`, `unsubscribe()`. No TracingChannel. |
 | `node:dns` | Partial | `lookup`, `resolve4`, `resolve6`, `resolveTxt`, `resolveMx` backed by DNS-over-HTTPS (DoH). |
 | `node:events` | Partial | `EventEmitter`, `once`, `on`. `captureRejections` supported. |
-| `node:fs` | Partial | VFS-backed. `readFileSync`, `writeFileSync`, `mkdirSync`, `readdirSync`, `statSync`, `existsSync`, `unlinkSync`, `renameSync`. Async variants delegate to sync under the hood. See [Virtual File System](/platform/vfs/). |
+| `node:fs` | Partial | VFS-backed. `readFileSync`, `writeFileSync`, `mkdirSync`, `readdirSync`, `statSync`, `existsSync`, `unlinkSync`, `renameSync`. Async variants delegate to sync under the hood. See [Virtual File System](/docs/platform/vfs/). |
 | `node:fs/promises` | Partial | Promise wrappers around VFS-backed sync operations. |
 | `node:http` | Partial | `createServer` is not available (the runtime is the server). `request` and `get` for outbound calls work. |
 | `node:https` | Partial | Same as `node:http` with TLS. |
@@ -105,7 +105,7 @@ const bytes = randomBytes(32);
 
 ### fs (VFS-backed)
 
-File system operations are backed by the [Virtual File System](/platform/vfs/). `/bundle` is mounted read-only from the deployed function bundle; `/tmp` is writable with quota enforcement.
+File system operations are backed by the [Virtual File System](/docs/platform/vfs/). `/bundle` is mounted read-only from the deployed function bundle; `/tmp` is writable with quota enforcement.
 
 ```js
 import { readFileSync, writeFileSync } from "node:fs";

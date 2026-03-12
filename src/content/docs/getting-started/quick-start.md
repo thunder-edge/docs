@@ -126,7 +126,7 @@ Both ports are configurable via CLI flags (`--admin-port`, `--port`) or environm
 
 ## Next steps
 
-- [Key Concepts](/getting-started/concepts/) -- Understand isolates, bundles, the function registry, and watch mode
-- [CLI Commands](/api/cli/) -- Full reference for `thunder start`, `thunder bundle`, `thunder watch`, and more
-- [Your First Function](/guides/your-first-function/) -- A deeper walkthrough with request handling, JSON responses, and error handling
-- [Testing Functions](/guides/testing/) -- Write and run tests for your edge functions with `thunder test`
+- [Key Concepts](/docs/getting-started/concepts/) -- Understand isolates, bundles, the function registry, and watch mode
+- [CLI Commands](/docs/api/cli/) -- Full reference for `thunder start`, `thunder bundle`, `thunder watch`, and more
+- [Your First Function](/docs/guides/your-first-function/) -- A deeper walkthrough with request handling, JSON responses, and error handling
+- [Testing Functions](/docs/guides/testing/) -- Write and run tests for your edge functions with `thunder test`
